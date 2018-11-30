@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "myvm01"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/5b0e6519-72b5-4421-85fe-71ee2898f8ff/resourceGroups/rg1/providers/Microsoft.KeyVault/vaults/rspacekv"
+        },
+        "secretName": "vmpassword"
+      }
+    }
+  }
+}
